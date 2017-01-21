@@ -1,4 +1,4 @@
-package philosophical
+package traits.philosophical
 
 trait Philosophical {
   def philosophize() = {
