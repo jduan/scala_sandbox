@@ -1,4 +1,4 @@
-package type_parameterization
+package type_parameterization.queue
 
 // private makes the primary constructor private to prevent object creation
 class Queue[T] private(
