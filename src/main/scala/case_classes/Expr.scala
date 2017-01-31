@@ -1,6 +1,6 @@
 package case_classes
 
-abstract class Expr
+sealed abstract class Expr
 
 case class Var(name: String) extends Expr
 
