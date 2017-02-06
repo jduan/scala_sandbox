@@ -30,7 +30,7 @@ object PatternMatch {
 
   def isIntIntMap(x: Any) = x match {
     // due to "type erasure", there's no info about type parameters maintained at runtime
-    case m: Map[Int, Int] => true
+    case m: Map[Int, Int] @unchecked => true
     case _ => false
   }
 
