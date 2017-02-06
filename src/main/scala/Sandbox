@@ -1,3 +1,4 @@
+#!/usr/bin/env scala
 import scala.io.Source
 
 def padString(s: String, width: Int): String = {
