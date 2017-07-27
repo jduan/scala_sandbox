@@ -48,4 +48,30 @@ class ListSpec extends FlatSpec with Matchers {
 
     Nil.isEmpty shouldBe true
   }
+
+  "pattern matching" should "work" in {
+    val fruit = "apples" :: "oranges" :: "pears" :: Nil
+    val List(a, b, c) = fruit
+    a shouldEqual "apples"
+    b shouldEqual "oranges"
+    c shouldEqual "pears"
+
+    val d :: e :: rest = fruit
+    d shouldEqual "apples"
+    e shouldEqual "oranges"
+    rest shouldEqual List("pears")
+
+    MyList.isort(List(3, 2, 1)) shouldEqual List(1, 2, 3)
+    MyList.isort(List(3, 2, 1, 5, 7, 0, -3)) shouldEqual List(-3, 0, 1, 2, 3, 5, 7)
+  }
+
+  "first-order functions" should "work" in {
+    // list concatenation
+    List(1, 2) ::: List(3, 4, 5) shouldEqual List(1, 2, 3, 4, 5)
+    // associate to the right
+    List(1, 2) ::: List(3, 4, 5) ::: List(6, 7) shouldEqual List(1, 2, 3, 4, 5, 6, 7)
+    MyList.concat(List(1, 2), List(3, 4, 5)) shouldEqual List(1, 2, 3, 4, 5)
+
+    //
+  }
 }
